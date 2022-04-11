@@ -9,7 +9,7 @@
       height: 200px;
       width: 200px;
       border: black 1px solid;
-      background: plum;
+      background: red;
     }
   </style>
 </head>
@@ -18,29 +18,49 @@
   <div id='uno'>Uno</div>
   <div id='dos'>Dos</div>
   <div id='tres'>Tres</div>
+  <button id="add">ADD</button>
 
   <script type="text/javascript">
     var arreglo = [1, 2, 3]
     var divs = document.querySelectorAll('div');
     var div = document.getElementById('uno');
-    // divs.forEach(function(e) {
-    //   e.addEventListener('click', function(evento) {
-    //     if( evento.target.style.background == 'gray none repeat scroll 0% 0%') {
-    //       evento.target.style.background = 'plum';
-    //     } else {
-    //       evento.target.style.background = 'gray';
-    //     }
-    //   })
-    // })
-    // document.body.addEventListener('mousemove', function(e) {
-    //   // div.style.position = 'fixed';
-    //   // div.style.top = e.clientY + 15 +'px';
-    //   // div.style.left = e.clientX + 152+'px';
 
-    // })
-    document.body.addEventListener('click', function (e) {
-      console.log(e.target);
-    })
+/*     divs.forEach(function(item){
+      item.addEventListener('click', function(evento){
+        alert('Haz hecho click en ' + evento.target.innerText)
+      })     
+    }) */
+
+/*     divs.forEach(function(e) {
+      e.addEventListener('click', function(evento) {
+        if( evento.target.style.background === 'yellow') {
+          evento.target.style.background = 'greenyellow';
+        } else if(evento.target.style.background == 'greenyellow'){
+          evento.target.style.background = 'red';
+        } else {
+          evento.target.style.background = 'yellow';
+        }
+      })
+    }) */
+
+/*     document.body.addEventListener('click', function(e) {
+      div.style.position = 'fixed';
+      div.style.top = e.clientY + 10 +'px';
+      div.style.left = e.clientX + 10 +'px';
+
+    }) */
+/*     document.body.addEventListener('click', function (e) {
+      console.log(e);
+    }) */
+
+/*     let numberOfDivs = 4
+    document.getElementById('add').addEventListener('click', function(e){
+      let newDiv = document.createElement('div')
+      newDiv.setAttribute('class', numberOfDivs)
+      newDiv.innerHTML = numberOfDivs
+      document.body.appendChild(newDiv)
+      numberOfDivs++
+    }) */
   </script>
 </body>
 
