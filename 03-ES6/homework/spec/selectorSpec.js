@@ -26,7 +26,7 @@ describe("matchFunctionMaker", function() {
     var selector = "#price";
     var matcher = matchFunctionMaker(selector);
     var sampleDivEl = document.createElement("DIV");
-    sampleDivEl.id = "price"; // el elemento tiene tres distintas clases en él
+    sampleDivEl.id = "price"; // el elemento tiene tres distintas clases en él // <div id='price'> </div>
     expect(matcher(sampleDivEl)).toEqual(true);
   });
 
@@ -73,6 +73,7 @@ describe("matchFunctionMaker", function() {
     var selector = "img.thumbnail";
     var matcher = matchFunctionMaker(selector);
     var sampleDivEl = document.createElement("img");
+    // sampleDivEl.tagName 'DIV'
     sampleDivEl.className = "thumbnail lead lightback"; // el elemento tiene tres distintas clases
     expect(matcher(sampleDivEl)).toEqual(true);
   });
