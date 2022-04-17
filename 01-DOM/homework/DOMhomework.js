@@ -1,7 +1,7 @@
 // Crear un array vacío llamado 'toDoItems'
 // Tu codigo acá:
 
-const toDoItems = []
+let toDoItems = []
 
 // En la página 'index.html' hay un elemento span cuyo texto es 'Aplicación creada por:'.
 // Usando querySelector seleccionar dicho span por su id ('createdBy') y luego usando innerHTML
@@ -29,7 +29,7 @@ function ToDo (description) {
 
 // Tu código acá:
 ToDo.prototype.completeToDo = function(){
-  this.complete = true;
+  this.complete = !this.complete;
 }
 
 
@@ -64,6 +64,9 @@ function buildToDo(todo, index) {
     toDoText.setAttribute('class', 'completeText')
   }
   toDoShell.appendChild(toDoText)
+  
+  toDoText.addEventListener('click', completeToDo)
+
   return toDoShell
 }
 
@@ -75,8 +78,6 @@ function buildToDo(todo, index) {
 function buildToDos(toDos) { // [{},{},{}]
   // Tu código acá:
   return toDos.map((element, index) => buildToDo(element, index))
-
-  
 }
 
 
@@ -142,7 +143,8 @@ function completeToDo(event) {
   // DESCOMENTAR LA SIGUIENTE LINEA
   const index = event.target.id;
   // Tu código acá:
-  index.completeToDo()
+  toDoItems[index].completeToDo()
+  displayToDos()
 }
 
 // Una vez que llegaste a este punto verificá que todos los tests pasen
