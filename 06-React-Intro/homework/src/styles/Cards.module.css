@@ -1,0 +1,7 @@
+#container{
+    background-image:url("../styles/Weather.webp");
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    height: 80vh;
+}

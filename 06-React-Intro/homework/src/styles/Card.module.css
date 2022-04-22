@@ -1,0 +1,51 @@
+.btn{
+    background-color: #D8D9C5;
+    border-radius: 50%;
+    border: 1px solid #324E73;
+    align-self: flex-end;
+    outline: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: #324E73;
+    margin: 5px;
+}
+.btn:focus{
+    border: 1px solid #D8D9C5;
+    outline: none;
+}
+
+.btn:hover {
+    background-color:#D8D9C5;
+    border: 1px solid #D8D9C5;
+}
+
+#weather{
+    display: flex;
+    flex-direction: row;
+}
+
+
+#card{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border: 2px solid #324E73;
+    border-radius: 10px;
+    background-color: #bfcfd95c;
+    width: 350px;
+    height: 220px;
+    margin: 10px 30px;
+}
+
+#city{
+color: #D8D9C5;
+font-weight: bold;
+font-size: xx-large;
+margin-bottom: 20px;
+}
+
+#weather {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
