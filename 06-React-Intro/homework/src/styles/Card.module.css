@@ -32,8 +32,8 @@
     border: 2px solid #324E73;
     border-radius: 10px;
     background-color: #bfcfd95c;
-    width: 350px;
-    height: 220px;
+    width: 300px;
+    height: 300px;
     margin: 10px 30px;
 }
 
@@ -48,4 +48,4 @@ margin-bottom: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-}
+}     
