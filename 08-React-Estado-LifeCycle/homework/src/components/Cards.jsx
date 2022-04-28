@@ -8,6 +8,8 @@ export default function Cards({cities, onClose}) {
     return (
       <div className='cards'>
         {cities.map(c => <Card
+
+            key={c.id} // this key is to asign the card an identifier. 
             max={c.max}
             min={c.min}
             name={c.name}
