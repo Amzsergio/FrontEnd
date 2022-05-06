@@ -3,6 +3,11 @@ import React, { useState } from 'react';
 import './App.css';
 import Nav from '../components/Nav.jsx';
 import Cards from '../components/Cards.jsx';
+import About from '../components/About.jsx';
+import Ciudad from '../components/Ciudad.jsx';
+import { Route } from 'react-router-dom';
+
+
 
 const apiKey = '4ae2636d8dfbdc3044bede63951a019b';
 
@@ -44,16 +49,44 @@ function App() {
         return null;
     }
   }
+
   return (
     <div className="App">
-      <Nav onSearch={onSearch}/>
+      
+        <Route
+
+          path='/'
+          render={ () => <Nav onSearch={onSearch}/> } // This is to display Nav in '/'.
+          //Keep in mind, it's important to return if there are '{}' or delete thisones in order to the arrow function works. 
+
+        />  
+
       <div>
-        <Cards
-          cities={cities}
-          onClose={onClose}
+        
+        <Route exact path='/'>
+          <Cards
+                cities={cities}
+                onClose={onClose}
+          /> 
+        </Route>
+        <Route
+                path='/about'
+                component={About}
+          />  
+        <Route 
+              
+                path='/ciudad/:ciudadId'
+                render={(props) => <Ciudad {...props} city={{}}/>}
+        
+        
         />
+
+
+
+
       </div>
       <hr />
+
     </div>
   );
 }
