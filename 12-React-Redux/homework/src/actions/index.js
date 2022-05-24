@@ -1,17 +1,17 @@
 
 const API_KEY = '6d022ee2'
 
-export function addMovieFavorite(payload) {
+export function addMovieFavorite(infoPeli) {
     return { 
         type: "ADD_MOVIE_FAVORITE", 
-        payload: ''
+        payload: infoPeli
     };
   }
 
-export function removeMovieFavorite(){
+export function removeMovieFavorite(id){
     return {
         type:"REMOVE_MOVIE_FAVORITE",
-        payload: ''
+        payload: id
     }
 }
 
@@ -20,10 +20,10 @@ export function getMovies(titulo) {
           return fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${titulo}`)
           .then(response  => response.json())
           .then(json => {
-              dispatch(  //getMovies(json) puede ser invocada si creo la funcion (1), y seria lo mismo. 
+              return dispatch(  //getMovies(json) puede ser invocada si creo la funcion (1), y seria lo mismo. 
               {
                   type: "GET_MOVIES",
-                  payload: json
+                  payload: json.Search
                   
                 }            
                 );
@@ -31,11 +31,20 @@ export function getMovies(titulo) {
         };
     }
 
-export function getMovieDetail(){
-    return {
-        type: 'GET_MOVIE_DETAIL',
-        payload: ''
-    }
+export function getMovieDetail(id){
+    return function(dispatch) {
+        return fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`)
+        .then(response  => response.json())
+        .then(json => {
+            return dispatch(
+            {
+                type: "GET_MOVIE_DETAIL",
+                payload: json
+                
+              }            
+              );
+          });
+      };
 }
 
 

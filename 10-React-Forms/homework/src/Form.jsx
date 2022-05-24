@@ -34,6 +34,16 @@ export default function  Form() {
   
 
   const onHandleInputs = (e) => {
+
+    /* This code works to access to the current value:
+
+    useEffect(()=> {
+      console.log(stateInputs)
+    }, [stateInputs]) // this indicates the dependecies. 
+    
+    */
+
+
     setStateInputs({
       ...stateInputs, // this is because password was being lost. 
       [e.target.name]: e.target.value//[e.target.name]: is "username" (1)

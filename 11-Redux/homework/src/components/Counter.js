@@ -6,10 +6,18 @@ class Counter extends Component {
     // Extra Credit
     incrementIfOdd = () => {
       //Implementar una función de incremento que sólo aumenta si el valor del contador es impar
+      if(this.props.count % 2 === 0){
+        this.props.increment()
+      }else{
+        this.props.increment(2)
+      }
     };
     // Extra Credit
     incrementAsync = () => {
         //  Implementar una función de incremento que aumenta después de esperar un segundo
+        setTimeout(()=>{
+            this.props.increment()
+        }, 1000)
     };
 
     render() {
@@ -17,20 +25,20 @@ class Counter extends Component {
         // Al hacer clic en estos botones, el recuento debe disminuir o aumentar en consecuencia
         return (
             <p>
-                Clickeado: {this.props.count} veces
-                <button onClick={() => {/* Completar */ }}>
-                    + {/* Incremeta */}
+                Clickeado: {this.props.count}  {/* This is the state from store by props if it is subscribed*/}
+                <button onClick={() => {this.props.increment()}}>
+                    +
                 </button>
-                <button onClick={() => {/* Completar */ }}>
-                    -  {/* Decrementa */}
+                <button onClick={() => {this.props.decrement()}}>
+                    -
                 </button>
                  {/* Si quieres hacer los extra credit puede descomentar las lineas de abajo */}
-                {/* <button onClick={this.incrementIfOdd}>
+                <button onClick={this.incrementIfOdd}>
                     incrementa si es impar
                 </button>
                 <button onClick={this.incrementAsync}>
                     Incrementa despues de un segundos
-                </button>  */}
+                </button> 
             </p>
         );
     }

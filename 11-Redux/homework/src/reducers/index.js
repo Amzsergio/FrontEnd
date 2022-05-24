@@ -11,8 +11,16 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case INCREMENT:
     // completa para este caso
+      return{
+        ...state,
+        count : state.count + action.payload
+      }
     case DECREMENT:
     // Fill para este otro
+    return{
+      ...state,
+      count : state.count - action.payload
+    }
     default:
       return state;
   }

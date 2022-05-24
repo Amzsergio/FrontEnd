@@ -1,7 +1,8 @@
-const { INCREMENTO, DECREMENTO } = require('../action-types');
+const { INCREMENTO, DECREMENTO, INCREMENTOIMPAR } = require('../action-types');
 
 const initialState = {
-  contador: 0
+  contador: 0,
+  array: [ {} ]
 }
 
 // Nuestro reducer que maneja nuestros dos casos de acción incremento y decremento.
@@ -13,7 +14,8 @@ function contador(state = initialState, action) {
     case INCREMENTO:
       return {
         ...state,
-        contador: state.contador + action.payload
+        contador: state.contador + action.payload,
+        array : [...state.array, {} ]
       }
       break;
     case DECREMENTO:
@@ -21,10 +23,13 @@ function contador(state = initialState, action) {
         ...state,
         contador: state.contador - action.payload
       }
-      break;
-
-    default: state
-      break;
+    case INCREMENTOIMPAR:
+      return {
+        ...state,
+        contador: state.contador + action.payload
+      }
+    default: 
+     return state
   }
 }
 

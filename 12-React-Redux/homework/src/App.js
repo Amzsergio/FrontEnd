@@ -12,7 +12,7 @@ function App() {
           <NavBar />
           <Route exact path="/" component={Buscador} />
           <Route path="/favs" component={Favorites} />
-          <Route path="/movie/:id" component={Movie} />
+          <Route path="/movie_detail/:id" component={Movie} />
       </React.Fragment>
   );
 }
